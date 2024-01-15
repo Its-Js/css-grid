@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Demo</title>
+    <style>
+      .container {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 24px repeat(12, 1fr) 24px;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-areas: 
+          "padding header header header header header header header header header header header header padding"
+
+          "padding footer footer footer footer footer footer footer footer footer footer footer footer padding"
+          ;
+        grid-gap: 16px;
+        background-color: green;
+        height: 100%;
+      }
+      .item {
+        background-color: aliceblue;
+        border: 3px solid #000;
+        grid-column-start: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="item">
+            <h1>Test</h1>
+        </div>
+  </body>
+</html>
