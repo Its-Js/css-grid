@@ -4,32 +4,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Grid Demo</title>
     <style>
+      body {
+        margin: 0;
+      }
       .container {
         display: grid;
         height: 100%;
         width: 100%;
-        grid-template-columns: 24px repeat(12, 1fr) 24px;
-        grid-template-rows: repeat(8, 1fr);
-        grid-template-areas: 
-          "padding header header header header header header header header header header header header padding"
-
-          "padding footer footer footer footer footer footer footer footer footer footer footer footer padding"
-          ;
-        grid-gap: 16px;
         background-color: green;
-        height: 100%;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        grid-gap: 16px;
       }
-      .item {
+      .header {
+        grid-column: 1 / last-line;
+        grid-row-start: 1;
         background-color: aliceblue;
-        border: 3px solid #000;
-        grid-column-start: 2;
+      }
+      .footer {
+        grid-area: 8/1/8 / last-line;
+        background-color: aliceblue;
+      }
+      .a {
+        grid-area: 2/1/6/8;
+        background-color: antiquewhite;
+      }
+      .b {
+        grid-area: 3/6/3 / end;
+        background-color: aqua;
+      }
+      .c {
+        grid-area: 4/4/8/10;
+        background-color: aquamarine;
       }
     </style>
   </head>
   <body>
     <div class="container">
-        <div class="item">
-            <h1>Test</h1>
-        </div>
+      <div class="header">
+        <h1>Header</h1>
+      </div>
+      <div class="footer">
+        <h1>Footer</h1>
+      </div>
+      <div class="a">
+        <h1>a</h1>
+      </div>
+      <div class="b"><h1>b</h1></div>
+      <div class="c"><h1>c</h1></div>
+    </div>
   </body>
 </html>
